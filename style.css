@@ -1,0 +1,33 @@
+body {
+    background-color: #161a1a;
+}
+
+h1 {
+    color: #04ecec;
+    text-align: center;
+}
+
+.main {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+.controls {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+#grid {
+    display: grid;
+    padding: 2em;
+    margin: 2em;
+    background-color: #0b1111;
+    color: #04ecec;
+    border: solid 2px #30acac;
+    box-shadow: 0 0 10px #04ecec;
+    padding: 5px 5px 5px 15px;
+    width: 500px;
+    height: 500px;
+}
