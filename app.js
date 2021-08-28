@@ -1,8 +1,26 @@
 console.log("Etch-A-Sketch");
 
-let currentColor = '#333333';
+let currentColor = '#EF7C8E';
 let currentMode = 'color';
 let currentSize = 16
+let currentColoumn = 2*currentSize;
+
+const grid = document.getElementById('grid')
+const colorButton = document.getElementById('colorButton')
+const colorPicker = document.getElementById('colorPicker')
+const rainbowButton = document.getElementById('rainbowButton')
+const eraserButton = document.getElementById('eraserButton')
+const sizeValue = document.getElementById('sizeValue')
+const sizeSlider = document.getElementById('sizeSlider')
+const reset = document.getElementById('reset')
+
+colorPicker.onchange = (e) => setCurrentColor(e.target.value)
+colorButton.onclick = () => setCurrentMode('color')
+rainbowButton.onclick = () => setCurrentMode('rainbow')
+eraserButton.onclick = () => setCurrentMode('eraser')
+reset.onclick = () => reloadGrid()
+sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
+sizeSlider.onchange = (e) => changeSize(e.target.value)
 
 function setCurrentColor(newColor) {
     currentColor = newColor;
@@ -24,7 +42,7 @@ function changeSize(value) {
 }
 
 function updateSizeValue(value) {
-    sizeValue.innerHTML = `${value} x ${value}`
+    sizeValue.innerHTML = `${value} x ${2*value}`
 }
 
 function reloadGrid() {
@@ -37,10 +55,10 @@ function clearGrid() {
 }
 
 function setupGrid(size) {
-    grid.style.gridTemplateColumns = `repeat(${size}, 1fr)`
+    grid.style.gridTemplateColumns = `repeat(${2*size}, 1fr)`
     grid.style.gridTemplateRows = `repeat(${size}, 1fr)`
   
-    for (let i = 0; i < size * size; i++) {
+    for (let i = 0; i < 2 * size * size; i++) {
         const gridElement = document.createElement('div')
         gridElement.addEventListener('mouseover', changeColor)
         grid.appendChild(gridElement)
@@ -62,42 +80,25 @@ function changeColor(e) {
 
 function activateButton(newMode) {
     if (currentMode === 'rainbow') {
-        rainbowBtn.classList.remove('active')
+        rainbowButton.classList.remove('active')
     } else if (currentMode === 'color') {
-        colorBtn.classList.remove('active')
+        colorButton.classList.remove('active')
     } else if (currentMode === 'eraser') {
-        eraserBtn.classList.remove('active')
+        eraserButton.classList.remove('active')
     }
 
     if (newMode === 'rainbow') {
-        rainbowBtn.classList.add('active')
+        rainbowButton.classList.add('active')
     } else if (newMode === 'color') {
-        colorBtn.classList.add('active')
+        colorButton.classList.add('active')
     } else if (newMode === 'eraser') {
-        eraserBtn.classList.add('active')
+        eraserButton.classList.add('active')
     }
 }
   
-const grid = document.getElementById('grid')
-const colorButton = document.getElementById('colorButton')
-const colorPicker = document.getElementById('colorPicker')
-const rainbowButton = document.getElementById('rainbowButton')
-const eraserButton = document.getElementById('eraserButton')
-const sizeValue = document.getElementById('sizeValue')
-const sizeSlider = document.getElementById('sizeSlider')
-const reset = document.getElementById('reset')
-
-colorPicker.onchange = (e) => setCurrentColor(e.target.value)
-colorBtn.onclick = () => setCurrentMode('color')
-rainbowBtn.onclick = () => setCurrentMode('rainbow')
-eraserBtn.onclick = () => setCurrentMode('eraser')
-clearBtn.onclick = () => reloadGrid()
-sizeSlider.onmousemove = (e) => updateSizeValue(e.target.value)
-sizeSlider.onchange = (e) => changeSize(e.target.value)
-
 window.onload = () => {
-    setupGrid(DEFAULT_SIZE)
-    activateButton(DEFAULT_MODE)
+    setupGrid(16)
+    activateButton(currentMode)
 }
   
 
