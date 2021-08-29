@@ -71,6 +71,7 @@ input[type='color'] {
 input[type='color']::-webkit-color-swatch-wrapper {
     -webkit-appearance: none;
     padding: 0;
+	background-color: #FAE8E0;
 }
 
 input[type='color']::-webkit-color-swatch {
@@ -117,5 +118,6 @@ input[type='range']::-webkit-slider-thumb {
   #grid {
 	margin-left: 0em;
     width: 70%;
+	height: 360px;
   }
 }
