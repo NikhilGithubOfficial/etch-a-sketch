@@ -18,11 +18,11 @@ h1 {
 
 .controls {
     display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	gap: 25px;
-	width: 200px;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 25px;
+    width: 200px;
 }
 
 #grid {
@@ -105,37 +105,17 @@ input[type='range']::-webkit-slider-thumb {
     background: #EF7C8E;
 }
 
-@media (max-width: 850px) {
-  .main {
-    gap: 50px;
-  }
-
-  .settings {
-    width: 150px;
-    gap: 16px;
-  }
-
-  .size-value {
-    margin-bottom: -4px;
-  }
-
-  .grid {
-    width: 20%;
-    height: 20%;
-  }
-}
-
 @media (max-width: 650px) {
-  h1 {
-    font-size: 50px;
-  }
-
+  
   .main {
     flex-direction: column-reverse;
+	align-content: center;
+	justify-content: flex-start;
+	gap: 50px;
   }
 
-  .grid {
-    width: 10%;
-    height: 10%;
+  #grid {
+	margin-left: 0em;
+    width: 70%;
   }
 }
