@@ -66,16 +66,15 @@ input[type='color'] {
     width: 80px;
     height: 80px;
     border: none;
-}
-
-input[type='color']::-webkit-color-swatch-wrapper {
-    -webkit-appearance: none;
-    padding: 0;
 	background-color: #FAE8E0;
 }
 
+input[type='color']::-webkit-color-swatch-wrapper {
+    padding: 0;
+	border: none;
+}
+
 input[type='color']::-webkit-color-swatch {
-    -webkit-appearance: none;
     border: none;
     border-radius: 50px;
     box-shadow: #EF7C8E 0px 3px 8px;
