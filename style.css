@@ -72,11 +72,13 @@ input[type='color'] {
 input[type='color']::-webkit-color-swatch-wrapper {
     padding: 0;
 	border: none;
+	background-color: #FAE8E0;
 }
 
 input[type='color']::-webkit-color-swatch {
     border: none;
     border-radius: 50px;
+	background-color: #FAE8E0;
     box-shadow: #EF7C8E 0px 3px 8px;
 }
 
